@@ -1,0 +1,79 @@
+<h2>Básicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <form 
+            (ngSubmit)="save( myForm )"
+            #myForm="ngForm"
+            autocomplete="off">
+            <!-- ** Campo del producto ** -->
+            <div class="mb-3 row">
+                <label 
+                    for="" 
+                    class="col-sm-3 col-form-label">
+                    Producto
+                </label>
+                <div class="col-sm-9">
+                    <input 
+                        type="text"
+                        ngModel=""
+                        name="product"
+                        placeholder="Nombre del producto"
+                        class="form-control"
+                        required>
+                        <span class="form-text text-danger">Debe contener mínimo tres letras</span>
+                </div>
+            </div>
+            <!-- ** Campo del precio ** -->
+            <div class="mb-3 row">
+                <label 
+                    for="" 
+                    class="col-sm-3 col-form-label">
+                    Precio del producto
+                </label>
+                <div class="col-sm-9">
+                    <input 
+                        type="number"
+                        ngModel=""
+                        name="precio"
+                        min="0"
+                        placeholder="Nombre del producto"
+                        class="form-control">
+                </div>
+            </div>
+            <!-- ** Campo existencias ** -->
+            <div class="mb-3 row">
+                <label 
+                    for="" 
+                    class="col-sm-3 col-form-label">
+                    Existencias del producto
+                </label>
+                <div class="col-sm-9">
+                    <input 
+                        type="number"
+                        ngModel=""
+                        name="existencias"
+                        min="0"
+                        placeholder="Nombre del producto"
+                        class="form-control">
+                </div>
+            </div>
+            <!-- ** Botón ** -->
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-outline-primary float-end">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{ myForm.valid }}</pre>
+        <span>Valor</span>
+        <pre>{{ myForm.value | json }}</pre>
+    </div>
+</div>
