@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col">
         <form 
-            (ngSubmit)="save( myForm )"
+            (ngSubmit)="save()"
             #myForm="ngForm"
             autocomplete="off">
             <!-- ** Campo del producto ** -->
@@ -21,8 +21,13 @@
                         name="product"
                         placeholder="Nombre del producto"
                         class="form-control"
-                        required>
-                        <span class="form-text text-danger">Debe contener mínimo tres letras</span>
+                        required
+                        minlength="3">
+                    <span
+                        *ngIf="validName()"
+                        class="form-text text-danger">
+                        Debe contener mínimo tres letras
+                    </span>
                 </div>
             </div>
             <!-- ** Campo del precio ** -->
@@ -36,10 +41,15 @@
                     <input 
                         type="number"
                         ngModel=""
-                        name="precio"
+                        name="price"
                         min="0"
-                        placeholder="Nombre del producto"
+                        placeholder="Precio del producto"
                         class="form-control">
+                    <span
+                        *ngIf="validPrice()"
+                        class="form-text text-danger">
+                        El precio debe de ser de 0 o mayor
+                    </span>
                 </div>
             </div>
             <!-- ** Campo existencias ** -->
@@ -53,16 +63,23 @@
                     <input 
                         type="number"
                         ngModel=""
-                        name="existencias"
-                        min="0"
-                        placeholder="Nombre del producto"
+                        name="stock"
+                        customMin
+                        [min]="0"
+                        placeholder="Existencias del producto"
+                        required
                         class="form-control">
                 </div>
             </div>
             <!-- ** Botón ** -->
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-outline-primary float-end">Guardar</button>
+                    <button
+                        type="submit"
+                        [disabled]="myForm.invalid"
+                        class="btn btn-outline-primary float-end">
+                        Guardar
+                    </button>
                 </div>
             </div>
         </form>
@@ -75,5 +92,11 @@
         <pre>{{ myForm.valid }}</pre>
         <span>Valor</span>
         <pre>{{ myForm.value | json }}</pre>
+        <span>Pristine</span>
+        <pre>{{ myForm.pristine }}</pre>
+        <span>Touched</span>
+        <pre>{{ myForm.touched }}</pre>
+        <span>Custom Directives</span>
+        <pre>{{ myForm.controls.stock?.errors | json }}</pre>
     </div>
 </div>
