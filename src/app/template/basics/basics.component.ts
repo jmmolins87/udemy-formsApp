@@ -35,7 +35,7 @@ export class BasicsComponent implements OnInit {
 
   save() {
     console.log( this.myForm );
-    console.log( 'Posteo correcto' );
+    // console.log( 'Posteo correcto' );
     this.myForm.resetForm({
       price: 0,
       stock: 0
