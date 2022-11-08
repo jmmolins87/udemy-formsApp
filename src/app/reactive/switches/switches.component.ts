@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class SwitchesComponent implements OnInit {
+  
+  public title: string = 'Switches';
 
   constructor() { }
 
