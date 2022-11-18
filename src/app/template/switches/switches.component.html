@@ -3,6 +3,106 @@
 
 <div class="row">
     <div class="col">
-        
+        <form #myForm="ngForm">
+            <!-- ** Radios ** -->
+            <div class="row mb-3 align-items-start">
+                <label class="col-sm-3 col-form-label">Género</label>
+                <div class="col-sm-9">
+                    <div class="form-check">
+                        <input 
+                            class="form-check-input" 
+                            type="radio"
+                            [(ngModel)]="person.gender" 
+                            value="M"
+                            name="genRadio" 
+                            id="male"
+                            required>
+                        <label 
+                            class="form-check-label" 
+                            for="male">
+                            Masculino
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input 
+                            class="form-check-input" 
+                            type="radio"
+                            [(ngModel)]="person.gender" 
+                            value="F"
+                            name="genRadio" 
+                            id="feminine" 
+                            checked
+                            required>
+                        <label 
+                            class="form-check-label" 
+                            for="feminine">
+                            Femenino
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ** Switches ** -->
+            <div class="row mb-3 align-items-center">
+                <label class="col-sm-3 col-form-label">Notificaciones</label>
+                <div class="col-sm-9">
+                    <div class="form-check form-switch">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            role="switch"
+                            [(ngModel)]="person.notifications" 
+                            name="notifications"
+                            id="notifications" 
+                            checked
+                            required>
+                        <label 
+                            class="form-check-label" 
+                            for="notifications">
+                            ¿Quieres recibir notificaciones?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ** Checks ** -->
+            <div class="row mb-3 align-items-center">
+                <div class="offset-sm-3 col-sm-9">
+                    <div class="form-check">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            value=""
+                            [(ngModel)]="termsConditions"
+                            name="termsConditions"
+                            id="termsConditions"
+                            required>
+                        <label 
+                            class="form-check-label" 
+                            for="termsConditions">
+                            Términos y condiciones
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ** Button ** -->
+            <div class="row">
+                <div class="col">
+                    <button 
+                        class="btn btn-outline-primary float-end" 
+                        [disabled]="myForm.invalid"
+                        [ngClass]="myForm.invalid ? 'not-allowed' : ''">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+        <h5>Valor del formulario</h5>
+        <pre>{{ myForm.value | json }}</pre>
+        <h5>Persona</h5>
+        <pre>{{ person | json }}</pre>
+        <h5>¿Valido?</h5>
+        <h5>Términos</h5>
+        <pre>{{ myForm.controls?.termsConditions?.errors | json }}</pre>
+        <h5>Condiciones:</h5>
+        <pre></pre>
     </div>
 </div>
