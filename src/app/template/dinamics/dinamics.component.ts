@@ -51,6 +51,7 @@ export class DinamicsComponent {
       name: this.newGame
     }
     this.person.favorites.push( newFavorite );
+    this.newGame = '';
   }
 
 }

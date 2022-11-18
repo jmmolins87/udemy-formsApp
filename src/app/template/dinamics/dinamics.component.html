@@ -40,12 +40,13 @@
             <div class="input-group">
                 <input 
                     type="text" 
-                    class="form-control" 
                     placeholder="Agregar juego favorito"
                     [(ngModel)]="newGame"
-                    name="newGame">
+                    (keyup.enter)="addNewGame()"
+                    name="newGame"
+                    class="form-control">
                 <button  
-                    (click)="addNewGame"
+                    (click)="addNewGame()"
                     type="button"
                     class="btn btn-outline-success">
                     Agregar
@@ -71,12 +72,12 @@
                     [(ngModel)]="game.name"
                     type="text" 
                     class="form-control">
-                    <button
-                        (click)="delete(i)"
-                        type="button" 
-                        class="btn btn-outline-danger">
-                        Eliminar
-                    </button>
+                <button
+                    (click)="delete(i)"
+                    type="button" 
+                    class="btn btn-outline-danger">
+                    Eliminar
+                </button>
             </div>
         </div>
     </div>
