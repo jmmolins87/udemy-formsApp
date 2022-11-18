@@ -9,6 +9,7 @@ import { MenuItem } from '../interface/sidemenu.interface';
 })
 export class SidemenuComponent {
 
+  public templateTitle: string = 'Template';
   public templateMenu: MenuItem[] = [
     {
       text: 'Básicos',
@@ -24,6 +25,7 @@ export class SidemenuComponent {
     }
   ];
 
+  public reactiveTitles: string = 'Reactive';
   public reactiveMenu: MenuItem[] = [
     {
       text: 'Básicos',

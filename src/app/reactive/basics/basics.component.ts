@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicsComponent implements OnInit {
 
+  public title: string = 'Básicos';
+
   constructor() { }
 
   ngOnInit(): void {

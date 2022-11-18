@@ -1,4 +1,4 @@
-<h2>Básicos</h2>
+<h2>{{ title }}</h2>
 <hr>
 
 <div class="row">
@@ -17,7 +17,7 @@
                 <div class="col-sm-9">
                     <input 
                         type="text"
-                        ngModel=""
+                        [ngModel]="initForm.product"
                         name="product"
                         placeholder="Nombre del producto"
                         class="form-control"
@@ -40,7 +40,7 @@
                 <div class="col-sm-9">
                     <input 
                         type="number"
-                        ngModel=""
+                        [ngModel]="initForm.price"
                         name="price"
                         min="0"
                         placeholder="Precio del producto"
@@ -62,7 +62,7 @@
                 <div class="col-sm-9">
                     <input 
                         type="number"
-                        ngModel=""
+                        [ngModel]="initForm.stock"
                         name="stock"
                         customMin
                         [min]="0"
