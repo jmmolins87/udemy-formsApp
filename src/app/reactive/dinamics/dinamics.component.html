@@ -1,8 +1,78 @@
 <h2>{{ title }}</h2>
 <hr>
 
-<div class="row">
-    <div class="col">
-        
+<form  autocomplete="off">
+    <!-- ** Nombre ** -->
+    <div class="row mb-3">
+        <div class="col-sm-3">
+            <label for="" class="col-form-label">
+                Nombre
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Nombre de la persona" 
+                required
+                class="form-control">
+            <span class="form-text text-danger">
+                * Este campo es obligatorio
+            </span>
+        </div>
     </div>
-</div>
+    <!-- ** Agregar ** -->
+    <div class="row mb-3">
+        <div class="col-sm-3">
+            <label for="" class="col-form-label">
+                Agregar
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    placeholder="Agregar juego favorito" 
+                    name="newGame" 
+                    class="form-control">
+                <button type="button" class="btn btn-outline-success">
+                    Agregar
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ** Lista juegos favoritos ** -->
+    <div class="row mb-3">
+        <div class="col-sm-3">
+            <label for="" class="col-form-label">
+                Favoritos
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="input-group mb-1">
+                <input type="text" class="form-control">
+                <button type="button" class="btn btn-outline-danger">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- ** Botón ** -->
+    <div class="row">
+        <div class="col">
+            <button 
+                type="button"
+                class="btn btn-outline-primary float-end">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+
+
+<!-- <span>Persona</span>
+<pre>{{ person | json }}</pre>
+
+<span>Array</span>
+<pre>{{ person.favorites | json }}</pre> -->
