@@ -3,6 +3,86 @@
 
 <div class="row">
     <div class="col">
-        
+        <form autocomplete="off">
+            <!-- ** Campo del producto ** -->
+            <div class="mb-3 row">
+                <label 
+                    for="" 
+                    class="col-sm-3 col-form-label">
+                    Producto
+                </label>
+                <div class="col-sm-9">
+                    <input 
+                        type="text" 
+                        name="product" 
+                        placeholder="Nombre del producto" 
+                        required 
+                        minlength="3"
+                        class="form-control">
+                    <span class="form-text text-danger">
+                        Debe contener mínimo tres letras
+                    </span>
+                </div>
+            </div>
+            <!-- ** Campo del precio ** -->
+            <div class="mb-3 row">
+                <label 
+                    for="" 
+                    class="col-sm-3 col-form-label">
+                    Precio del producto
+                </label>
+                <div class="col-sm-9">
+                    <input 
+                        type="number" 
+                        name="price" 
+                        min="0"
+                        placeholder="Precio del producto" 
+                        class="form-control">
+                    <span class="form-text text-danger">
+                        El precio debe de ser de 0 o mayor
+                    </span>
+                </div>
+            </div>
+            <!-- ** Campo existencias ** -->
+            <div class="mb-3 row">
+                <label 
+                    for="" 
+                    class="col-sm-3 col-form-label">
+                    Existencias del producto
+                </label>
+                <div class="col-sm-9">
+                    <input 
+                        type="number" 
+                        name="stock" 
+                        [min]="0"
+                        placeholder="Existencias del producto" 
+                        required 
+                        class="form-control">
+                </div>
+            </div>
+            <!-- ** Botón ** -->
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-outline-primary float-end">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <!-- <span>Valid</span>
+        <pre>{{ myForm.valid }}</pre>
+        <span>Valor</span>
+        <pre>{{ myForm.value | json }}</pre>
+        <span>Pristine</span>
+        <pre>{{ myForm.pristine }}</pre>
+        <span>Touched</span>
+        <pre>{{ myForm.touched }}</pre>
+        <span>Custom Directives</span>
+        <pre>{{ myForm.controls.stock?.errors | json }}</pre> -->
     </div>
 </div>
